@@ -1,31 +1,22 @@
+
 body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #ffff;
     background-color: black;
-    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
 }
 
-.MainImage {
-    background-color: red;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -150px;
-    margin-left: -175px;
-    width: 350px;
-    height: 300px;
-}
-.MainImage img{
-    text-align:center;
-    width:350px;
-    height:300px;
-
+.Hamburger {
+ 
+    float:right;
 }
 
-.Name {
-    position: absolute;
-    top: 0;
-    left: 0;
+.NameLeftCorner {
+    top: 0px;
+    left: 0px;
+    float: left;
+    margin: 50px auto;
 }
-    .Name h2 {
-        color: white;
-        font-family: 'Roboto Slab', serif;
-    }
