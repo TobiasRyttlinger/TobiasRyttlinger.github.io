@@ -1,82 +1,78 @@
-﻿<!doctype html>
-
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-  <title>Tobias Ryttlinger</title>
-  <meta name="Portfolio" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../package/css/swiper.min.css">
 
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Demo styles -->
+    <style>
+        body {
+            background: #fff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
 
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
 
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
-
 <body>
-    <!--Includes-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <script src="js/scripts.js"></script>
-
-    <!--Header with links to linkedIn and Github aswell as link to the info section of the page-->
-    <div class="Header">
-        <h1>Tobias Ryttlinger</h1>
-
-        <div>
-            <a id="Info"><h1>About</h1></a>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-5.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-6.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-7.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-8.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-9.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg0)"></div>
         </div>
-        <div>
-            <a href="www.google.se"><h1>LinkedIn</h1></a>
-        </div>
-        <div>
-            <a href="https://github.com/TobiasRyttlinger"><h1>Github</h1></a>
-        </div>
-
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
     </div>
 
-    <div class="ImageContainer">
-        <img src="https://via.placeholder.com/300.png" />
-    </div>
+    <!-- Swiper JS -->
+    <script src="../package/js/swiper.min.js"></script>
 
-
-    <!--Section where images about projects shall be-->
-    <div class="container">
-        <div class="Column">
-            <div class="Left">
-                <h1>Left</h1>
-                <a href="https://placeholder.com/"><img src="https://via.placeholder.com/300.png" /></a>
-                <a href="https://placeholder.com/"><img src="https://via.placeholder.com/300.png" /></a>
-            </div>
-        </div>
-
-        <div class="Column">
-            <div class="Middle">
-                <h1>Middle</h1>
-                <a href="https://placeholder.com/"><img src="https://via.placeholder.com/300.png" /></a>
-                <a href="https://placeholder.com/"><img src="https://via.placeholder.com/300.png" /></a>
-            </div>
-        </div>
-
-        <div class="Column">
-            <div class="Right">
-                <h1>Right</h1>
-                <a href="https://placeholder.com/"><img src="https://via.placeholder.com/300.png" /></a>
-                <a href="https://placeholder.com/"><img src="https://via.placeholder.com/300.png" /></a>
-            </div>
-        </div>
-    </div>
-
-    <!--Informational section-->
-    <div class="Info">
-        <h1>Info</h1>
-        <div class="InfoText">
-            <p>Lorem ipsum dolor sit amet</p>
-        </div>
-    </div>
-
-    <div class=" Contact">
-
-    </div>
-
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+        },
+        pagination: {
+        el: '.swiper-pagination',
+        },
+        });
+    </script>
 </body>
 </html>
