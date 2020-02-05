@@ -1,11 +1,11 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 /* Icon 1 */
 
-#nav-icon1 span, #nav-icon3 span, #nav-icon4, #nav-icon4a {
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 {
     width: 45px;
     height: 30px;
     position: relative;
@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-#nav-icon1 span, #nav-icon3 span, #nav-icon4 span ,#nav-icon4a span{
+#nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
   display: block;
   position: absolute;
   height: 9px;
