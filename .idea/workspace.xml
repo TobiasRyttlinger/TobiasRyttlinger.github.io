@@ -18,6 +18,9 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1edWY0ddfR7VeGOgz1BX5AxavHg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594651993182</updated>
       <workItem from="1594651994381" duration="6856000" />
+      <workItem from="1597927541345" duration="26000" />
     </task>
     <servers />
   </component>
