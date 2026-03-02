@@ -1,1 +1,293 @@
-/* Your custom css code goes here */
+/* GitHub-topics-inspired refresh for the portfolio home page */
+.portfolio-modern {
+  --page-bg: #f6f8fa;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #57606a;
+  --border: #d0d7de;
+  --accent: #0969da;
+  --accent-soft: #ddf4ff;
+  background: var(--page-bg);
+  color: var(--text-main);
+  font-family: "Manrope", "Rubik", sans-serif;
+}
+
+.portfolio-modern .container-fluid {
+  max-width: 1280px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.portfolio-modern .probootstrap-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: rgba(246, 248, 250, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.portfolio-modern .probootstrap-logo {
+  color: #24292f;
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.portfolio-modern .probootstrap-logo:hover,
+.portfolio-modern .probootstrap-logo:focus {
+  color: #24292f;
+}
+
+.portfolio-modern .probootstrap-logo span {
+  color: var(--accent);
+}
+
+.portfolio-modern .probootstrap-nav {
+  padding-right: 0;
+}
+
+.portfolio-modern .probootstrap-main-nav li {
+  font-size: 14px;
+  padding: 0 6px;
+}
+
+.portfolio-modern .probootstrap-main-nav li a {
+  color: #24292f;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+
+.portfolio-modern .probootstrap-main-nav li a:hover {
+  border-bottom-color: transparent;
+  border-color: var(--border);
+  background: #ffffff;
+}
+
+.portfolio-modern .probootstrap-intro {
+  height: auto;
+  min-height: auto;
+  padding-top: 56px;
+  padding-bottom: 34px;
+  overflow: visible;
+  background: transparent;
+}
+
+.portfolio-modern .probootstrap-intro:before {
+  display: none;
+}
+
+.portfolio-modern .probootstrap-intro .probootstrap-intro-text {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 100%;
+}
+
+.portfolio-modern .hero-kicker {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #0550ae;
+  border: 1px solid #b6e3ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portfolio-modern .probootstrap-intro h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #24292f;
+  max-width: 24ch;
+}
+
+.portfolio-modern .probootstrap-intro .probootstrap-subtitle {
+  max-width: 70ch;
+}
+
+.portfolio-modern .probootstrap-intro .probootstrap-subtitle p {
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.portfolio-modern .hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portfolio-modern .hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  min-width: 132px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.portfolio-modern .hero-button-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: #0858b8;
+}
+
+.portfolio-modern .hero-button-primary:hover,
+.portfolio-modern .hero-button-primary:focus {
+  color: #fff;
+  background: #0858b8;
+}
+
+.portfolio-modern .hero-button-secondary {
+  color: #24292f;
+  background: #ffffff;
+}
+
+.portfolio-modern .hero-button-secondary:hover,
+.portfolio-modern .hero-button-secondary:focus {
+  color: #24292f;
+  background: #f3f4f6;
+}
+
+.portfolio-modern .probootstrap-intro .probootstrap-scroll-down {
+  display: none;
+}
+
+.portfolio-modern #next-section {
+  padding-bottom: 48px;
+}
+
+.portfolio-modern .section-intro {
+  margin-bottom: 14px;
+}
+
+.portfolio-modern .section-intro h2 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #24292f;
+}
+
+.portfolio-modern .section-intro p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.portfolio-modern .row.probootstrap-gutter0 > [class*="col-"] {
+  padding: 10px;
+}
+
+.portfolio-modern .probootstrap-hover-overlay {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  overflow: hidden;
+}
+
+.portfolio-modern .probootstrap-hover-overlay:before {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.portfolio-modern .probootstrap-hover-overlay img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.portfolio-modern .probootstrap-hover-overlay .probootstrap-text-overlay {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  padding: 14px 14px 15px;
+}
+
+.portfolio-modern .probootstrap-hover-overlay .probootstrap-text-overlay h3 {
+  margin: 0 0 7px;
+  color: #24292f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.portfolio-modern .probootstrap-hover-overlay .probootstrap-text-overlay p {
+  margin: 0;
+  display: inline-block;
+  color: #0550ae;
+  background: var(--accent-soft);
+  border: 1px solid #b6e3ff;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.portfolio-modern .probootstrap-hover-overlay:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 31, 36, 0.12);
+}
+
+.portfolio-modern .probootstrap-hover-overlay:hover img {
+  transform: none;
+}
+
+.portfolio-modern .probootstrap-footer {
+  background: transparent;
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+}
+
+.portfolio-modern .probootstrap-footer small,
+.portfolio-modern .probootstrap-footer p {
+  color: var(--text-muted);
+}
+
+.portfolio-modern .probootstrap-footer a {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .portfolio-modern .container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .portfolio-modern .probootstrap-intro {
+    padding-top: 30px;
+    padding-bottom: 22px;
+  }
+
+  .portfolio-modern .probootstrap-intro .probootstrap-intro-text {
+    padding-left: 0;
+    padding-right: 0;
+    height: auto !important;
+  }
+
+  .portfolio-modern .probootstrap-main-nav li a {
+    color: #fff;
+  }
+
+  .portfolio-modern .row.probootstrap-gutter0 > [class*="col-"] {
+    padding: 8px;
+  }
+}
