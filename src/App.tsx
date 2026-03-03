@@ -162,15 +162,13 @@ function HomePage() {
           {repoError ? <p className="state-text">{repoError}</p> : null}
           {!isLoadingRepos && !repoError ? (
             <div className="github-grid">
-              {repos.map((repo, index) => (
+              {repos.map((repo) => (
                 <a
                   key={repo.id}
-                  className="github-card reveal"
-                  data-reveal
+                  className="github-card"
                   href={repo.html_url}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ transitionDelay: `${Math.min(index, 11) * 40}ms` }}
                 >
                   <h3>{repo.name}</h3>
                   <p>{repo.description ?? "No description available."}</p>
@@ -265,9 +263,13 @@ export default function App() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealTargets = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const revealElement = (element: HTMLElement) => {
+      element.style.opacity = "1";
+      element.style.transform = "translate3d(0, 0, 0) scale(1)";
+    };
 
     if (prefersReducedMotion) {
-      revealTargets.forEach((element) => element.classList.add("is-visible"));
+      revealTargets.forEach(revealElement);
       return;
     }
 
@@ -278,7 +280,7 @@ export default function App() {
             return;
           }
 
-          entry.target.classList.add("is-visible");
+          revealElement(entry.target as HTMLElement);
           observer.unobserve(entry.target);
         });
       },
