@@ -120,7 +120,7 @@ function HomePage() {
       </aside>
 
       <div className="content-column">
-        <section id="about" className="section-block">
+        <section id="about" className="section-block reveal" data-reveal>
           <div className="section-heading">
             <h2>About</h2>
           </div>
@@ -131,18 +131,18 @@ function HomePage() {
           ))}
         </section>
 
-        <section id="experience" className="section-block">
+        <section id="experience" className="section-block reveal" data-reveal>
           <div className="section-heading">
             <h2>Experience</h2>
           </div>
           <div className="timeline">
-            <article className="history-card">
+            <article className="history-card reveal" data-reveal>
               <span>2019 - 2024</span>
               <h3>Linkoping University</h3>
               <p>MSc in Media Technology</p>
               <small>Project work spanning graphics, simulation, UX, and visualization.</small>
             </article>
-            <article className="history-card">
+            <article className="history-card reveal" data-reveal>
               <span>Focus</span>
               <h3>Interactive Product Engineering</h3>
               <p>Software + visual communication</p>
@@ -154,7 +154,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="projects" className="section-block">
+        <section id="projects" className="section-block reveal" data-reveal>
           <div className="section-heading">
             <h2>Projects</h2>
           </div>
@@ -162,13 +162,15 @@ function HomePage() {
           {repoError ? <p className="state-text">{repoError}</p> : null}
           {!isLoadingRepos && !repoError ? (
             <div className="github-grid">
-              {repos.map((repo) => (
+              {repos.map((repo, index) => (
                 <a
                   key={repo.id}
-                  className="github-card"
+                  className="github-card reveal"
+                  data-reveal
                   href={repo.html_url}
                   target="_blank"
                   rel="noreferrer"
+                  style={{ transitionDelay: `${Math.min(index, 11) * 40}ms` }}
                 >
                   <h3>{repo.name}</h3>
                   <p>{repo.description ?? "No description available."}</p>
@@ -184,7 +186,7 @@ function HomePage() {
           ) : null}
         </section>
 
-        <section id="contact" className="section-block">
+        <section id="contact" className="section-block reveal" data-reveal>
           <div className="section-heading">
             <h2>Contact</h2>
           </div>
@@ -209,10 +211,10 @@ function HomePage() {
 function AboutPage() {
   return (
     <main className="shell about-page">
-      <section className="section-heading">
+      <section className="section-heading reveal" data-reveal>
         <h1>About</h1>
       </section>
-      <section className="about-layout">
+      <section className="about-layout reveal" data-reveal>
         <div>
           <h2>{about.name}</h2>
           <p className="about-title">{about.title}</p>
@@ -258,6 +260,33 @@ export default function App() {
 
     window.addEventListener("mousemove", onMouseMove);
     return () => window.removeEventListener("mousemove", onMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealTargets = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+
+    if (prefersReducedMotion) {
+      revealTargets.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    revealTargets.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
   }, []);
 
   return (
